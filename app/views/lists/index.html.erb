@@ -16,7 +16,7 @@
     <% @lists.each do |list| %>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
         <%= link_to list_path(list), class:"text-decoration-none" do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: url(<%= asset_path('krists-luhaers-AtPWnYNDJnM-unsplash.jpg') %>); height: 200px; background-size: cover;">
+          <div class="card-category" data-aos="zoom-in" style="background-image: url(<%= list.photo.attached? ? cl_image_path(list.photo.key) :asset_path('list_background.jpg') %>); height: 200px; background-size: cover;">
             <%= list.name %>
           </div>
         <% end %>
